@@ -5,7 +5,7 @@ var arrayUniq = require('array-uniq');
 function findLoose(str) {
 	var match;
 	var matches = [];
-	var reVersion = /[^\d\.]v?(\d+\.\d+)[^\.\+\-]/g; // match 1.1, but not semver 1.1.0
+	var reVersion = /[^\d\.]v?(\d+\.\d+)[^\.\+\-]?/g; // match 1.1, but not semver 1.1.0
 
 	while (match = reVersion.exec(' ' + str + ' ')) { // pad it to make crappy regex work
 		if (match[1]) {
