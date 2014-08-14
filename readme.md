@@ -50,19 +50,20 @@ $ npm install --global find-versions
 ```sh
 $ find-versions --help
 
-Usage
-  $ find-versions <string> [--first] [--loose]
-  $ echo <string> | find-versions
+  Usage
+    find-versions <string> [--first] [--loose]
+    echo <string> | find-versions
 
-Example
-  $ find-versions 'unicorns v1.2.3'
-  1.2.3
-  $ curl --version | find-versions --first
-  7.30.0
+  Example
+    find-versions 'unicorns v1.2.3'
+    1.2.3
 
-Options
-  --first  Return the first match
-  --loose  Match non-semver versions like 1.88
+    curl --version | find-versions --first
+    7.30.0
+
+  Options
+    --first  Return the first match
+    --loose  Match non-semver versions like 1.88
 ```
 
 

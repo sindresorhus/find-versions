@@ -8,21 +8,23 @@ var input = argv._[0];
 
 function help() {
 	console.log([
-		pkg.description,
 		'',
-		'Usage',
-		'  $ find-versions <string> [--first] [--loose]',
-		'  $ echo <string> | find-versions',
+		'  ' + pkg.description,
 		'',
-		'Example',
-		'  $ find-versions \'unicorns v1.2.3\'',
-		'  1.2.3',
-		'  $ curl --version | find-versions --first',
-		'  7.30.0',
+		'  Usage',
+		'    find-versions <string> [--first] [--loose]',
+		'    echo <string> | find-versions',
 		'',
-		'Options',
-		'  --first  Return the first match',
-		'  --loose  Match non-semver versions like 1.88'
+		'  Example',
+		'    find-versions \'unicorns v1.2.3\'',
+		'    1.2.3',
+		'',
+		'    curl --version | find-versions --first',
+		'    7.30.0',
+		'',
+		'  Options',
+		'    --first  Return the first match',
+		'    --loose  Match non-semver versions like 1.88'
 	].join('\n'));
 }
 
