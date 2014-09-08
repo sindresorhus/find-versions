@@ -9,7 +9,7 @@ module.exports = function (str, opts) {
 
 	opts = opts || {};
 
-	var reLoose = new RegExp('(?:' + semverRegex().source + ')|(?:v?(\\d+\\.\\d+)[^\\.\\+\\-]?)', 'g');
+	var reLoose = new RegExp('(?:' + semverRegex().source + ')|(?:v?(?:\\d+\\.\\d+)(?:\\.\\d+)?)', 'g');
 	var matches = str.match(opts.loose === true ? reLoose : semverRegex()) || [];
 
 	return arrayUniq(matches.map(function (el) {
