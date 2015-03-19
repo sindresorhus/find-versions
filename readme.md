@@ -51,14 +51,14 @@ $ npm install --global find-versions
 $ find-versions --help
 
   Usage
-    find-versions <string> [--first] [--loose]
-    echo <string> | find-versions
+    $ find-versions <string> [--first] [--loose]
+    $ echo <string> | find-versions
 
   Example
-    find-versions 'unicorns v1.2.3'
+    $ find-versions 'unicorns v1.2.3'
     1.2.3
 
-    curl --version | find-versions --first
+    $ curl --version | find-versions --first
     7.30.0
 
   Options
