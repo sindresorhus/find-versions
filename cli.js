@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-var stdin = require('get-stdin');
+var getStdin = require('get-stdin');
 var meow = require('meow');
 var findVersions = require('./');
 
@@ -36,5 +36,5 @@ if (process.stdin.isTTY) {
 
 	init(cli.input[0]);
 } else {
-	stdin(init);
+	getStdin(init);
 }

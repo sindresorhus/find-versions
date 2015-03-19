@@ -5,7 +5,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save find-versions
 ```
 
@@ -43,11 +43,11 @@ They're coerced into semver compliant versions.
 
 ## CLI
 
-```sh
+```
 $ npm install --global find-versions
 ```
 
-```sh
+```
 $ find-versions --help
 
   Usage
