@@ -20,7 +20,7 @@ var cli = meow({
 		'Options',
 		'  --first  Return the first match',
 		'  --loose  Match non-semver versions like 1.88'
-	].join('\n')
+	]
 });
 
 function init(data) {
