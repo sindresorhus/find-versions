@@ -4,24 +4,22 @@ var getStdin = require('get-stdin');
 var meow = require('meow');
 var findVersions = require('./');
 
-var cli = meow({
-	help: [
-		'Usage',
-		'  $ find-versions <string> [--first] [--loose]',
-		'  $ echo <string> | find-versions',
-		'',
-		'Example',
-		'  $ find-versions \'unicorns v1.2.3\'',
-		'  1.2.3',
-		'',
-		'  $ curl --version | find-versions --first',
-		'  7.30.0',
-		'',
-		'Options',
-		'  --first  Return the first match',
-		'  --loose  Match non-semver versions like 1.88'
-	]
-});
+var cli = meow([
+	'Usage',
+	'  $ find-versions <string> [--first] [--loose]',
+	'  $ echo <string> | find-versions',
+	'',
+	'Example',
+	'  $ find-versions \'unicorns v1.2.3\'',
+	'  1.2.3',
+	'',
+	'  $ curl --version | find-versions --first',
+	'  7.30.0',
+	'',
+	'Options',
+	'  --first  Return the first match',
+	'  --loose  Match non-semver versions like 1.88'
+]);
 
 function init(data) {
 	var ret = findVersions(data, {loose: cli.flags.loose});
@@ -36,5 +34,5 @@ if (process.stdin.isTTY) {
 
 	init(cli.input[0]);
 } else {
-	getStdin(init);
+	getStdin().then(init);
 }
