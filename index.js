@@ -12,7 +12,7 @@ module.exports = function (str, opts) {
 	var reLoose = new RegExp('(?:' + semverRegex().source + ')|(?:v?(?:\\d+\\.\\d+)(?:\\.\\d+)?)', 'g');
 	var matches = str.match(opts.loose === true ? reLoose : semverRegex()) || [];
 
-	return arrayUniq(matches.map(function (el) {
-		return el.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0');
+	return arrayUniq(matches.map(function (x) {
+		return x.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0');
 	}));
 };
