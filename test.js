@@ -2,7 +2,7 @@ import test from 'ava';
 import fn from './';
 
 test(t => {
-	t.same(fn('unicorn 1.0.0 rainbow'), ['1.0.0']);
+	t.same(fn('unicorn v1.2.3 rainbow'), ['1.2.3']);
 	t.same(fn('version 3.2.51(1)-release'), ['3.2.51']);
 	t.same(fn('cp (GNU coreutils) 8.22'), []);
 	t.same(fn('foo v2.0.0 rainbow 1.88'), ['2.0.0']);

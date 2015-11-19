@@ -1,6 +1,6 @@
 # find-versions [![Build Status](https://travis-ci.org/sindresorhus/find-versions.svg?branch=master)](https://travis-ci.org/sindresorhus/find-versions)
 
-> Find semver versions in a string: `unicorn 1.0.0` → `1.0.0`
+> Find semver versions in a string: `unicorn v1.2.3` → `1.2.3`
 
 
 ## Install
@@ -15,8 +15,8 @@ $ npm install --save find-versions
 ```js
 const findVersions = require('find-versions');
 
-findVersions('unicorn 1.0.0 rainbow v2.3.4+build.1');
-//=> ['1.0.0', '2.3.4+build.1']
+findVersions('unicorn v1.2.3 rainbow 2.3.4+build.1');
+//=> ['1.2.3', '2.3.4+build.1']
 
 findVersions('cp (GNU coreutils) 8.22', {loose: true});
 //=> ['8.22.0']
