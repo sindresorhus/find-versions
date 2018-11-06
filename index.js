@@ -1,18 +1,14 @@
 'use strict';
-var semverRegex = require('semver-regex');
-var arrayUniq = require('array-uniq');
+const semverRegex = require('semver-regex');
+const arrayUniq = require('array-uniq');
 
-module.exports = function (str, opts) {
-	if (typeof str !== 'string') {
-		throw new TypeError('Expected a string');
+module.exports = (input, options = {}) => {
+	if (typeof input !== 'string') {
+		throw new TypeError(`Expected a string, got ${typeof input}`);
 	}
 
-	opts = opts || {};
+	const reLoose = new RegExp(`(?:${semverRegex().source})|(?:v?(?:\\d+\\.\\d+)(?:\\.\\d+)?)`, 'g');
+	const matches = input.match(options.loose === true ? reLoose : semverRegex()) || [];
 
-	var reLoose = new RegExp('(?:' + semverRegex().source + ')|(?:v?(?:\\d+\\.\\d+)(?:\\.\\d+)?)', 'g');
-	var matches = str.match(opts.loose === true ? reLoose : semverRegex()) || [];
-
-	return arrayUniq(matches.map(function (x) {
-		return x.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0');
-	}));
+	return arrayUniq(matches.map(match => match.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0')));
 };

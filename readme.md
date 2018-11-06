@@ -1,4 +1,4 @@
-# find-versions [![Build Status](https://travis-ci.org/sindresorhus/find-versions.svg?branch=master)](https://travis-ci.org/sindresorhus/find-versions)
+# find-versions [![Build Status](https://travis-ci.com/sindresorhus/find-versions.svg?branch=master)](https://travis-ci.com/sindresorhus/find-versions)
 
 > Find semver versions in a string: `unicorn v1.2.3` → `1.2.3`
 
@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save find-versions
+$ npm install find-versions
 ```
 
 
@@ -33,13 +33,14 @@ Type: `string`
 
 #### options
 
+Type: `Object`
+
 ##### loose
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
-Also match non-semver versions like `1.88`.  
-They're coerced into semver compliant versions.
+Also match non-semver versions like `1.88`. They're coerced into semver compliant versions.
 
 
 ## Related
@@ -49,4 +50,4 @@ They're coerced into semver compliant versions.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
