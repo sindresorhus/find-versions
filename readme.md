@@ -25,9 +25,9 @@ findVersions('cp (GNU coreutils) 8.22', {loose: true});
 
 ## API
 
-### findVersions(input, [options])
+### findVersions(stringWithVersions, [options])
 
-#### input
+#### stringWithVersions
 
 Type: `string`
 
