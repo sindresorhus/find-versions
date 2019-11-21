@@ -33,7 +33,6 @@
 		"get"
 	],
 	"dependencies": {
-		"array-uniq": "^2.1.0",
 		"semver-regex": "^2.0.0"
 	},
 	"devDependencies": {
