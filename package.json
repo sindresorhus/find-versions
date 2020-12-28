@@ -1,6 +1,6 @@
 {
 	"name": "find-versions",
-	"version": "3.2.0",
+	"version": "4.0.0",
 	"description": "Find semver versions in a string: `unicorn v1.2.3` → `1.2.3`",
 	"license": "MIT",
 	"repository": "sindresorhus/find-versions",
@@ -10,7 +10,7 @@
 		"url": "sindresorhus.com"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -33,7 +33,7 @@
 		"get"
 	],
 	"dependencies": {
-		"semver-regex": "^2.0.0"
+		"semver-regex": "^3.1.2"
 	},
 	"devDependencies": {
 		"ava": "^1.4.1",
