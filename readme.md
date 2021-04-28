@@ -11,7 +11,7 @@ $ npm install find-versions
 ## Usage
 
 ```js
-const findVersions = require('find-versions');
+import findVersions from 'find-versions';
 
 findVersions('unicorn v1.2.3 rainbow 2.3.4+build.1');
 //=> ['1.2.3', '2.3.4+build.1']

@@ -1,5 +1,5 @@
 import test from 'ava';
-import findVersions from '.';
+import findVersions from './index.js';
 
 test('main', t => {
 	t.deepEqual(findVersions('unicorn v1.2.3 rainbow'), ['1.2.3']);

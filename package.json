@@ -10,8 +10,10 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
+	"exports": "./index.js",
 	"engines": {
-		"node": ">=10"
+		"node": ">=12"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd"
@@ -34,11 +36,11 @@
 		"get"
 	],
 	"dependencies": {
-		"semver-regex": "^3.1.2"
+		"semver-regex": "^4.0.0"
 	},
 	"devDependencies": {
-		"ava": "^2.4.0",
+		"ava": "^3.15.0",
 		"tsd": "^0.14.0",
-		"xo": "^0.36.1"
+		"xo": "^0.39.1"
 	}
 }

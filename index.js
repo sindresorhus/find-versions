@@ -1,7 +1,6 @@
-'use strict';
-const semverRegex = require('semver-regex');
+import semverRegex from 'semver-regex';
 
-module.exports = (stringWithVersions, {loose = false} = {}) => {
+export default function findVersions(stringWithVersions, {loose = false} = {}) {
 	if (typeof stringWithVersions !== 'string') {
 		throw new TypeError(`Expected a string, got ${typeof stringWithVersions}`);
 	}
@@ -10,4 +9,4 @@ module.exports = (stringWithVersions, {loose = false} = {}) => {
 	const matches = stringWithVersions.match(regex) || [];
 
 	return [...new Set(matches.map(match => match.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0')))];
-};
+}
