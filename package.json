@@ -1,6 +1,6 @@
 {
 	"name": "find-versions",
-	"version": "5.0.0",
+	"version": "5.1.0",
 	"description": "Find semver versions in a string: `unicorn v1.2.3` → `1.2.3`",
 	"license": "MIT",
 	"repository": "sindresorhus/find-versions",
