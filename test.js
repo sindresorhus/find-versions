@@ -3,14 +3,14 @@ import findVersions from './index.js';
 
 test('main', t => {
 	t.deepEqual(findVersions('unicorn v1.2.3 rainbow'), ['1.2.3']);
-	t.deepEqual(findVersions('version 3.2.51(1)-release'), ['3.2.51']);
 	t.deepEqual(findVersions('cp (GNU coreutils) 8.22'), []);
 	t.deepEqual(findVersions('foo v2.0.0 rainbow 1.88'), ['2.0.0']);
+	t.deepEqual(findVersions('version 3.2.51(1)-release', {loose: true}), ['3.2.51']);
 	t.deepEqual(findVersions('foo v2.0.0 rainbow 1.88', {loose: true}), ['2.0.0', '1.88.0']);
 	t.deepEqual(findVersions('cp (GNU coreutils) 8.22', {loose: true}), ['8.22.0']);
 	t.deepEqual(
 		findVersions('v1.0.0 foo 9.33 cp (GNU coreutils) 8.22 sad', {loose: true}),
-		['1.0.0', '9.33.0', '8.22.0']
+		['1.0.0', '9.33.0', '8.22.0'],
 	);
 	t.deepEqual(findVersions('0.13.alpha.4', {loose: true}), ['0.13.0']);
 	// TODO: Disabled because of https://github.com/sindresorhus/semver-regex/pull/15#issuecomment-751278009

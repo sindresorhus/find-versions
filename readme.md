@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install find-versions
+```sh
+npm install find-versions
 ```
 
 ## Usage
