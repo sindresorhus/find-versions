@@ -1,4 +1,5 @@
 import semverRegex from 'semver-regex';
+import {matches} from 'super-regex';
 
 export default function findVersions(stringWithVersions, {loose = false} = {}) {
 	if (typeof stringWithVersions !== 'string') {
@@ -6,7 +7,7 @@ export default function findVersions(stringWithVersions, {loose = false} = {}) {
 	}
 
 	const regex = loose ? new RegExp(`(?:${semverRegex().source})|(?:v?(?:\\d+\\.\\d+)(?:\\.\\d+)?)`, 'g') : semverRegex();
-	const matches = stringWithVersions.match(regex) || [];
+	const versions = [...matches(regex, stringWithVersions)].map(({match}) => match.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0')); // TODO: Remove the `...` when https://github.com/tc39/proposal-iterator-helpers is available.
 
-	return [...new Set(matches.map(match => match.trim().replace(/^v/, '').replace(/^\d+\.\d+$/, '$&.0')))];
+	return [...new Set(versions)];
 }

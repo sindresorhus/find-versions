@@ -1,11 +1,11 @@
-export interface Options {
+export type Options = {
 	/**
 	Also match non-semver versions like `1.88`. They're coerced into semver compliant versions.
 
 	@default false
 	*/
 	readonly loose?: boolean;
-}
+};
 
 /**
 Find semver versions in a string: `unicorn v1.2.3` → `1.2.3`.
